@@ -8,11 +8,11 @@ import 'swiper/css/navigation'
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules'
-import Slide from './Slide'
 
 import bgimg1 from '../assets/images/carousel1.jpg'
 import bgimg2 from '../assets/images/carousel2.jpg'
 import bgimg3 from '../assets/images/carousel3.jpg'
+import Slide2 from './Slide2'
 
 export default function Carousel2() {
     return (
@@ -33,21 +33,21 @@ export default function Carousel2() {
                 className='mySwiper'
             >
                 <SwiperSlide>
-                    <Slide
+                    <Slide2
                         image={bgimg1}
-                        text='Get Your Web Development Projects Done in minutes'
+                        text='EveryDay Your Help Saves More Pets'
                     />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Slide
+                    <Slide2
                         image={bgimg2}
-                        text='Get Your Graphics Design Projects Done in minutes'
+                        text='Help Us In a Great Cause'
                     />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Slide
+                    <Slide2
                         image={bgimg3}
-                        text='Start Your Digital Marketing Campaigns up n running'
+                        text='Help Save More Pets EveryDay'
                     />
                 </SwiperSlide>
             </Swiper>
