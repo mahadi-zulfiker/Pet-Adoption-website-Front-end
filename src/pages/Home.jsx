@@ -4,14 +4,19 @@ import choose2 from "../assets/whyChoose/2.webp";
 import choose3 from "../assets/whyChoose/3.webp";
 import choose4 from "../assets/whyChoose/4.webp";
 import choose5 from "../assets/whyChoose/5.webp";
+import AboutUs from "../components/AboutUs";
 import Carousel from "../components/Carousel";
+import Carousel2 from "../components/Carousel2";
 import Categories from "../components/Categories/Categories";
+import SectionTitle from "../components/SectionTitle/SectionTitle";
 
 const Home = () => {
   return (
     <div>
       <Carousel></Carousel>
       <Categories></Categories>
+      <SectionTitle heading={"Call to action"} subHeading={"Help us in a noble cause"}></SectionTitle>
+      <Carousel2></Carousel2>
       {/* Testimonials */}
       <div className="gadgetContainer py-24 mt-20 bg-gradient-to-r from-[#F9F3F0] from-100% via-[#FCE7DC] via-30% to-[#F9F3F0] to-90% dark:bg-gradient-to-r dark:from-[#0F172A] dark:from-10% dark:via-[#0F172A] dark:via-30% dark:to-[#0F172A]">
         {/* header */}
@@ -120,6 +125,7 @@ const Home = () => {
             </p>
           </div>
         </div>
+        <AboutUs></AboutUs>
       </div>
     </div>
   )
