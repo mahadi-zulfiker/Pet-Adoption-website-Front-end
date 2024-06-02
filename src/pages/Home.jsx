@@ -8,6 +8,7 @@ import choose5 from "../assets/whyChoose/5.webp";
 const Home = () => {
   return (
     <div>
+      
       {/* Testimonials */}
       <div className="gadgetContainer py-24 mt-20 bg-gradient-to-r from-[#F9F3F0] from-100% via-[#FCE7DC] via-30% to-[#F9F3F0] to-90% dark:bg-gradient-to-r dark:from-[#0F172A] dark:from-10% dark:via-[#0F172A] dark:via-30% dark:to-[#0F172A]">
         {/* header */}
@@ -32,12 +33,12 @@ const Home = () => {
                   <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="block w-5 h-5 text-gray-400 mb-4" viewBox="0 0 975.036 975.036">
                     <path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"></path>
                   </svg>
-                  <p className="leading-relaxed mb-6">I recently purchased the Apple MacBook Air, and I must say, I am thoroughly impressed with this fantastic piece of technology. From its design to its performance, it has exceeded my expectations in every way.</p>
+                  <p className="leading-relaxed mb-6">The CozyPaws Pet House is a fantastic addition to our home! My cat Luna loves it and spends hours lounging inside. It is well-made, easy to clean, and looks great in our living room. Highly recommend for any pet owner </p>
                   <a className="inline-flex items-center">
                     <img alt="testimonial" src="https://i.ibb.co/TKYdH3g/girl1.jpg" className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center" />
                     <span className="flex-grow flex flex-col pl-4">
-                      <span className="title-font font-medium text-gray-900 dark:text-white">Mr X</span>
-                      <span className="text-gray-500 text-sm dark:text-gray-200">DEVELOPER</span>
+                      <span className="title-font font-medium text-gray-900 dark:text-white">Jessica H.</span>
+                      <span className="text-gray-500 text-sm dark:text-gray-200">Home Maker</span>
                     </span>
                   </a>
                 </div>
@@ -47,11 +48,11 @@ const Home = () => {
                   <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="block w-5 h-5 text-gray-400 mb-4" viewBox="0 0 975.036 975.036">
                     <path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"></path>
                   </svg>
-                  <p className="leading-relaxed  mb-6">The HP Pavilion series is a reliable and affordable line of laptops that are well-suited for everyday computing needs. While it may not be the most powerful or feature-packed laptop on the market, it offers good value for the price.</p>
+                  <p className="leading-relaxed  mb-6">I could not be happier with the CozyPaws Pet House. My dog Max took to it right away and now it is his go-to spot. The quality and comfort are top-notch. It is stylish, sturdy, and super cozy. A must-have for pet owners!</p>
                   <a className="inline-flex items-center">
                     <img alt="testimonial" src="https://i.ibb.co/n1KHYYp/boy1.png" className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center" />
                     <span className="flex-grow flex flex-col pl-4">
-                      <span className="title-font font-medium text-gray-900 dark:text-white">Mr. Y</span>
+                      <span className="title-font font-medium text-gray-900 dark:text-white">David R.</span>
                       <span className="text-gray-500 dark:text-gray-200 text-sm">DESIGNER</span>
                     </span>
                   </a>

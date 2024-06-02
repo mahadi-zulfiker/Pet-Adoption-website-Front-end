@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    font-family: 'DM Sans', sans-serif;
+}
+
+@layer components {
+    .gadgetContainer {
+        @apply max-w-[1920px] px-5 md:px-[50px] lg:px-[80px] xl:px-[120px] 2xl:px-[150px] mx-auto
+    }
+}

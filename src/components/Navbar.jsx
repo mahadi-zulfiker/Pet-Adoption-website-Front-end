@@ -1,92 +1,104 @@
-import { useContext } from 'react'
-import logo from '../assets/images/logo.jpg'
-import { AuthContext } from '../providers/AuthProvider'
+import Container from './Container'
+import { AiOutlineMenu } from 'react-icons/ai'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import darking from "../assets/images/dark.png";
-import lighting from "../assets/images/light.png";
-// eslint-disable-next-line react/prop-types
-const Navbar = ({ setDarkMode, darkMode }) => {
+import avatarImg from '../../src/assets/images/placeholder.jpg'
+import logoImg from '../../src/assets/images/logo.jpg'
+import useAuth from '../hooks/useAuth'
 
-  const { user, logOut } = useContext(AuthContext)
+const Navbar = () => {
+  const { user, logOut } = useAuth()
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div className='navbar bg-base-100 shadow-sm container px-4 mx-auto'>
-      <div className='flex-1'>
-        <Link to='/' className='flex gap-2 items-center'>
-          <img className='w-auto h-7' src={logo} alt='' />
-          <span className='font-bold'>ProductPulse</span>
-        </Link>
-      </div>
-      <div className="w-[50px]">
-        <button
-          onClick={() => setDarkMode(!darkMode)}
-          className=" p-1 mr-3 flex items-center"
-        >
-          <img
-            className="md:w-full   w-10 object-cover"
-            src={darkMode ? lighting : darking}
-            alt=""
-          />
-        </button>
-      </div>
-      <div className='flex-none'>
-        <ul className='menu menu-horizontal px-1'>
-          <li>
-            <Link to='/'>Home</Link>
-          </li>
-          <li>
-            <Link to='/allQueries'>Queries</Link>
-          </li>
-
-          {!user && (
-            <li>
-              <Link to='/login'>Login</Link>
-            </li>
-          )}
-        </ul>
-
-        {user && (
-          <div className='dropdown dropdown-end z-50'>
-            <div
-              tabIndex={0}
-              role='button'
-              className='btn btn-ghost btn-circle avatar'
-            >
-              <div title={user?.displayName} className='w-10 rounded-full'>
-                <img
-                  referrerPolicy='no-referrer'
-                  alt='User Profile Photo'
-                  src={user?.photoURL}
-                />
-              </div>
-            </div>
-            <ul
-              tabIndex={0}
-              className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52'
-            >
-              <li>
-                <Link to='/recommendationForMe' className='justify-between'>
-                  Recommendations
-                  For Me
-                </Link>
-              </li>
-              <li>
-                <Link to='/myQueries'>My Queries</Link>
-              </li>
-              <li>
-                <Link to='/myRecommendation'>My recommendations</Link>
-              </li>
-              <li className='mt-2'>
-                <button
-                  onClick={logOut}
-                  className='bg-gray-200 block text-center'
+    <div className='w-full bg-white shadow-sm'>
+      <div className='py-4 border-b-[1px]'>
+        <Container>
+          <div className='flex flex-row  items-center justify-between gap-3 md:gap-0'>
+            {/* Logo */}
+            <Link to='/'>
+              <img
+                // className='hidden md:block'
+                src={logoImg}
+                alt='logo'
+                width='100'
+                height='100'
+              />
+            </Link>
+            {/* Dropdown Menu */}
+            <div className='relative'>
+              <div className='flex flex-row items-center gap-3'>
+                {/* Become A Host btn */}
+                <div className='hidden md:block'>
+                  {!user && (
+                    <button
+                      disabled={!user}
+                      className='disabled:cursor-not-allowed cursor-pointer hover:bg-neutral-100 py-3 px-4 text-sm font-semibold rounded-full  transition'
+                    >
+                      Host your home
+                    </button>
+                  )}
+                </div>
+                {/* Dropdown btn */}
+                <div
+                  onClick={() => setIsOpen(!isOpen)}
+                  className='p-4 md:py-1 md:px-2 border-[1px] border-neutral-200 flex flex-row items-center gap-3 rounded-full cursor-pointer hover:shadow-md transition'
                 >
-                  Logout
-                </button>
-              </li>
-            </ul>
+                  <AiOutlineMenu />
+                  <div className='hidden md:block'>
+                    {/* Avatar */}
+                    <img
+                      className='rounded-full'
+                      referrerPolicy='no-referrer'
+                      src={user && user.photoURL ? user.photoURL : avatarImg}
+                      alt='profile'
+                      height='30'
+                      width='30'
+                    />
+                  </div>
+                </div>
+              </div>
+              {isOpen && (
+                <div className='absolute rounded-xl shadow-md w-[40vw] md:w-[10vw] bg-white overflow-hidden right-0 top-12 text-sm'>
+                  <div className='flex flex-col cursor-pointer'>
+                    <Link
+                      to='/'
+                      className='block md:hidden px-4 py-3 hover:bg-neutral-100 transition font-semibold'
+                    >
+                      Home
+                    </Link>
+
+                    {user ? (
+                      <>
+                        <div
+                          onClick={logOut}
+                          className='px-4 py-3 hover:bg-neutral-100 transition font-semibold cursor-pointer'
+                        >
+                          Logout
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <Link
+                          to='/login'
+                          className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'
+                        >
+                          Login
+                        </Link>
+                        <Link
+                          to='/registration'
+                          className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'
+                        >
+                          Sign Up
+                        </Link>
+                      </>
+                    )}
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
-        )}
+        </Container>
       </div>
     </div>
   )
