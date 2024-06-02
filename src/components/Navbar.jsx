@@ -18,27 +18,35 @@ const Navbar = () => {
             {/* Logo */}
             <Link to='/'>
               <img
-                // className='hidden md:block'
+                className='w-24'
                 src={logoImg}
                 alt='logo'
                 width='100'
                 height='100'
               />
             </Link>
+            <ul className='menu menu-horizontal px-1'>
+              <li>
+                <Link to='/'>Home</Link>
+              </li>
+              <li>
+                <Link to='/petListing'>Pet Listing</Link>
+              </li>
+              <li>
+                <Link to='/donationCampaigns'>Donation Campaigns</Link>
+              </li>
+              <li>
+                <Link
+                  to='/login'
+                >
+                  Login
+                </Link>
+              </li>
+            </ul>
+
             {/* Dropdown Menu */}
             <div className='relative'>
               <div className='flex flex-row items-center gap-3'>
-                {/* Become A Host btn */}
-                <div className='hidden md:block'>
-                  {!user && (
-                    <button
-                      disabled={!user}
-                      className='disabled:cursor-not-allowed cursor-pointer hover:bg-neutral-100 py-3 px-4 text-sm font-semibold rounded-full  transition'
-                    >
-                      Host your home
-                    </button>
-                  )}
-                </div>
                 {/* Dropdown btn */}
                 <div
                   onClick={() => setIsOpen(!isOpen)}
