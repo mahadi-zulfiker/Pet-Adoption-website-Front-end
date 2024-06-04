@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
 
-const AllQueriesDetails = () => {
+const DonationDetails = () => {
 
     const { id } = useParams();
     const [item, setItem] = useState([]);
@@ -28,7 +28,7 @@ const AllQueriesDetails = () => {
                             <p>pet_type: {item.pet_type}</p>
                         </div>
                         <div className="card-actions justify-between">
-                            <Link to={`/petDetails/${item._id}`}><button className="btn btn-primary">Adopt</button></Link>
+                            <Link to={`/donationDetails/${item._id}`}><button className="btn btn-primary">Donate</button></Link>
                         </div>
                     </div>
                 </div>
@@ -37,4 +37,4 @@ const AllQueriesDetails = () => {
     );
 };
 
-export default AllQueriesDetails;
+export default DonationDetails;

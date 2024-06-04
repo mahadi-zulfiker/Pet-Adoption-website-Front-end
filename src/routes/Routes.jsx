@@ -7,6 +7,8 @@ import ErrorPage from '../pages/ErrorPage'
 import AllQueries from '../pages/AllQueries'
 import PrivateRoute from './PrivateRoute'
 import AllQueriesDetails from '../pages/AllQueriesDetails'
+import DonationDetails from '../pages/DonationDetails'
+import AllDonations from '../pages/AllDonations'
 
 const router = createBrowserRouter([
   {
@@ -35,6 +37,18 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <AllQueriesDetails></AllQueriesDetails>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: '/donationCampaigns',
+        element: <AllDonations />,
+      },
+      {
+        path: "/donationDetails/:id",
+        element: (
+          <PrivateRoute>
+            <DonationDetails></DonationDetails>
           </PrivateRoute>
         ),
       },

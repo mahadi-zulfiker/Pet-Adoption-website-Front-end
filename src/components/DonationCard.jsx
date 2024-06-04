@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 
-
-const AllQueriesCard = () => {
+const DonationCard = () => {
     const [item, setItem] = useState([]);
     // console.log(user);
     useEffect(() => {
@@ -28,7 +27,7 @@ const AllQueriesCard = () => {
                                 <p>pet_type: {p.pet_type}</p>
                             </div>
                             <div className="card-actions justify-between">
-                                <Link to={`/petDetails/${p._id}`}><button className="btn btn-primary">Details</button></Link>
+                                <Link to={`/donationDetails/${p._id}`}><button className="btn btn-primary">Details</button></Link>
                             </div>
                         </div>
                     </div>
@@ -38,4 +37,4 @@ const AllQueriesCard = () => {
     );
 };
 
-export default AllQueriesCard;
+export default DonationCard;
