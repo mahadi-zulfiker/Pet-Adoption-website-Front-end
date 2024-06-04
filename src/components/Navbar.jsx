@@ -7,7 +7,7 @@ import logoImg from '../../src/assets/images/logo.jpg'
 import useAuth from '../hooks/useAuth'
 
 const Navbar = () => {
-  const { user, logOut } = useAuth()
+  const { user, logOut } = useAuth();
   const [isOpen, setIsOpen] = useState(false)
 
   return (
@@ -70,21 +70,14 @@ const Navbar = () => {
                 <div className='absolute rounded-xl shadow-md w-[40vw] md:w-[10vw] bg-white overflow-hidden right-0 top-12 text-sm'>
                   <div className='flex flex-col cursor-pointer'>
                     <Link
-                      to='/'
+                      to='/dashboard'
                       className='block md:hidden px-4 py-3 hover:bg-neutral-100 transition font-semibold'
                     >
-                      Home
+                      Dashboard
                     </Link>
 
                     {user ? (
                       <>
-                        <ul className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52'>
-                          <li>
-                            <Link to='/dashboard' className='justify-between'>
-                              DashBoard
-                            </Link>
-                          </li>
-                        </ul>
                         <div
                           onClick={logOut}
                           className='px-4 py-3 hover:bg-neutral-100 transition font-semibold cursor-pointer'
