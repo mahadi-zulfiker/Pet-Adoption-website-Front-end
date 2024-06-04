@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 
 
@@ -21,10 +22,13 @@ const AllQueriesCard = () => {
                         <div className="card py-3 bg-base-100 shadow-xl">
                             <figure><img className="mb-3 h-[300px] w-[350px]" src={p.pet_image} alt="Shoes" /></figure>
                             <div>
-                               <p>pet_name: {p.pet_name}</p>
-                               <p>pet_age: {p.pet_age}</p>
-                               <p>pet_location: {p.pet_location}</p>
-                               <p>pet_type: {p.pet_type}</p>
+                                <p>pet_name: {p.pet_name}</p>
+                                <p>pet_age: {p.pet_age}</p>
+                                <p>pet_location: {p.pet_location}</p>
+                                <p>pet_type: {p.pet_type}</p>
+                            </div>
+                            <div className="card-actions justify-between">
+                                <Link to={`/petDetails/${p._id}`}><button className="btn btn-primary">Adopt</button></Link>
                             </div>
                         </div>
                     </div>

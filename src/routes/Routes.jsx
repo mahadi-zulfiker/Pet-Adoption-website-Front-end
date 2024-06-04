@@ -5,6 +5,8 @@ import Login from '../pages/Authentication/Login'
 import Register from '../pages/Authentication/Register'
 import ErrorPage from '../pages/ErrorPage'
 import AllQueries from '../pages/AllQueries'
+import PrivateRoute from './PrivateRoute'
+import AllQueriesDetails from '../pages/AllQueriesDetails'
 
 const router = createBrowserRouter([
   {
@@ -27,7 +29,15 @@ const router = createBrowserRouter([
       {
         path: '/petListing',
         element: <AllQueries />,
-      }
+      },
+      {
+        path: "/petDetails/:id",
+        element: (
+          <PrivateRoute>
+            <AllQueriesDetails></AllQueriesDetails>
+          </PrivateRoute>
+        ),
+      },
     ],
   },
 ])
