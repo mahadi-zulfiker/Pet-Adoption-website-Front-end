@@ -7,14 +7,14 @@ import choose5 from "../assets/whyChoose/5.webp";
 import AboutUs from "../components/AboutUs";
 import Carousel from "../components/Carousel";
 import Carousel2 from "../components/Carousel2";
-import Categories from "../components/Categories/Categories";
 import SectionTitle from "../components/SectionTitle/SectionTitle";
+import AllQueries from "./AllQueries";
 
 const Home = () => {
   return (
     <div>
       <Carousel></Carousel>
-      <Categories></Categories>
+      <AllQueries></AllQueries>
       <SectionTitle heading={"Call to action"} subHeading={"Help us in a noble cause"}></SectionTitle>
       <Carousel2></Carousel2>
       {/* Testimonials */}
