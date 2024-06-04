@@ -25,7 +25,7 @@ const router = createBrowserRouter([
         element: <Register />,
       },
       {
-        path: '/allPets',
+        path: '/petListing',
         element: <AllQueries />,
       }
     ],
