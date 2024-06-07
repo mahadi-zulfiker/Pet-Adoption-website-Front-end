@@ -9,6 +9,8 @@ import PrivateRoute from './PrivateRoute'
 import AllQueriesDetails from '../pages/AllQueriesDetails'
 import DonationDetails from '../pages/DonationDetails'
 import AllDonations from '../pages/AllDonations'
+import Dashboard from '../layouts/Dashboard'
+import UserHome from '../pages/UserHome/UserHome'
 
 const router = createBrowserRouter([
   {
@@ -54,6 +56,19 @@ const router = createBrowserRouter([
       },
     ],
   },
-])
+  {
+    path: 'dashboard',
+    element: <PrivateRoute>
+        <Dashboard></Dashboard>
+    </PrivateRoute>,
+    children: [
+        // normal user routes
+        {
+            path: 'userHome',
+            element: <UserHome></UserHome>
+        },
+    ]
+}
+]);
 
 export default router
