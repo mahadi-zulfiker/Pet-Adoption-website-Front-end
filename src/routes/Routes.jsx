@@ -2,7 +2,6 @@ import { createBrowserRouter } from 'react-router-dom'
 import Main from '../layouts/Main'
 import Home from '../pages/Home'
 import Login from '../pages/Authentication/Login'
-import Register from '../pages/Authentication/Register'
 import ErrorPage from '../pages/ErrorPage'
 import AllQueries from '../pages/AllQueries'
 import PrivateRoute from './PrivateRoute'
@@ -11,6 +10,8 @@ import DonationDetails from '../pages/DonationDetails'
 import AllDonations from '../pages/AllDonations'
 import Dashboard from '../layouts/Dashboard'
 import UserHome from '../pages/UserHome/UserHome'
+import AllUsers from '../pages/AllUsers/AllUsers'
+import SignUp from '../pages/Authentication/SignUp'
 
 const router = createBrowserRouter([
   {
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/registration',
-        element: <Register />,
+        element: <SignUp />,
       },
       {
         path: '/petListing',
@@ -67,6 +68,10 @@ const router = createBrowserRouter([
             path: 'userHome',
             element: <UserHome></UserHome>
         },
+        {
+          path: 'allUsers',
+          element: <AllUsers></AllUsers>
+      },
     ]
 }
 ]);
