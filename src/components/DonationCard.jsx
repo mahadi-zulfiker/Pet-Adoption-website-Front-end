@@ -6,7 +6,7 @@ const DonationCard = () => {
     const [item, setItem] = useState([]);
     // console.log(user);
     useEffect(() => {
-        fetch(`${import.meta.env.VITE_API_URL}/pets`)
+        fetch(`${import.meta.env.VITE_API_URL}/donations`)
             .then((res) => res.json())
             .then((data) => {
                 setItem(data);
@@ -22,9 +22,8 @@ const DonationCard = () => {
                             <figure><img className="mb-3 h-[300px] w-[350px]" src={p.pet_image} alt="Shoes" /></figure>
                             <div>
                                 <p>pet_name: {p.pet_name}</p>
-                                <p>pet_age: {p.pet_age}</p>
-                                <p>pet_location: {p.pet_location}</p>
-                                <p>pet_type: {p.pet_type}</p>
+                                <p>max_donation_amount: {p.max_donation_amount}</p>
+                                <p>donated_amount: {p.donated_amount}</p>
                             </div>
                             <div className="card-actions justify-between">
                                 <Link to={`/donationDetails/${p._id}`}><button className="btn btn-primary">Details</button></Link>
