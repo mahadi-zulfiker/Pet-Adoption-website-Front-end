@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom'
 import avatarImg from '../../src/assets/images/placeholder.jpg'
 import logoImg from '../../src/assets/images/logo.jpg'
 import useAuth from '../hooks/useAuth'
-import useAdmin from '../hooks/useAdmin'
+//import useAdmin from '../hooks/useAdmin'
 
 const Navbar = () => {
   const { user, logOut } = useAuth();
-  const [isAdmin] = useAdmin();
+  //const [isAdmin] = useAdmin();
   const [isOpen, setIsOpen] = useState(false)
 
   return (
@@ -73,7 +73,7 @@ const Navbar = () => {
                   <div className='flex flex-col cursor-pointer'>
                     {user ? (
                       <>
-                        {
+                        {/* {
                           user && isAdmin &&
                           <Link
                             to='/dashboard/adminHome'
@@ -90,13 +90,13 @@ const Navbar = () => {
                           >
                             Dashboard
                           </Link>
-                        }
-                        {/* <Link
+                        } */}
+                        <Link
                           to='/dashboard/userHome'
                           className='block px-4 py-3 hover:bg-neutral-100 transition font-semibold'
                         >
                           Dashboard
-                        </Link> */}
+                        </Link>
                         <div
                           onClick={logOut}
                           className='px-4 py-3 hover:bg-neutral-100 transition font-semibold cursor-pointer'
