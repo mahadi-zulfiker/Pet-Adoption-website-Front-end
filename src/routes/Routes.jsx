@@ -12,6 +12,8 @@ import Dashboard from '../layouts/Dashboard'
 import UserHome from '../pages/UserHome/UserHome'
 import AllUsers from '../pages/AllUsers/AllUsers'
 import SignUp from '../pages/Authentication/SignUp'
+import AdminRoute from './AdminRoute'
+import AdminHome from '../pages/AdminHome/AdminHome'
 
 const router = createBrowserRouter([
   {
@@ -60,20 +62,29 @@ const router = createBrowserRouter([
   {
     path: 'dashboard',
     element: <PrivateRoute>
-        <Dashboard></Dashboard>
+      <Dashboard></Dashboard>
     </PrivateRoute>,
     children: [
-        // normal user routes
-        {
-            path: 'userHome',
-            element: <UserHome></UserHome>
-        },
-        {
-          path: 'allUsers',
-          element: <AllUsers></AllUsers>
+      // normal user routes
+      {
+        path: 'userHome',
+        element: <UserHome></UserHome>
+      },
+      // admin routes
+      {
+        path: 'adminHome',
+        element: <AdminRoute>
+          <AdminHome></AdminHome>
+        </AdminRoute>
+      },
+      {
+        path: 'allUsers',
+        element: <AdminRoute>
+          <AllUsers></AllUsers>
+        </AdminRoute>
       },
     ]
-}
+  }
 ]);
 
 export default router
