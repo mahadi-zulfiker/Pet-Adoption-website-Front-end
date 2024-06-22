@@ -14,6 +14,9 @@ import AllUsers from '../pages/AllUsers/AllUsers'
 import SignUp from '../pages/Authentication/SignUp'
 import AdminRoute from './AdminRoute'
 import AdminHome from '../pages/AdminHome/AdminHome'
+import AddQueries from '../pages/AddQueries'
+import MyQueries from '../pages/MyQueries'
+import UpdateQueries from '../pages/UpdateQueries'
 
 const router = createBrowserRouter([
   {
@@ -54,6 +57,26 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <DonationDetails></DonationDetails>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: '/myQueries',
+        element: <PrivateRoute>
+          <MyQueries></MyQueries>
+        </PrivateRoute>,
+      },
+      {
+        path: '/addQueries',
+        element: <PrivateRoute>
+          <AddQueries></AddQueries>
+        </PrivateRoute>,
+      },
+      {
+        path: "/products/:id",
+        element: (
+          <PrivateRoute>
+            <UpdateQueries></UpdateQueries>
           </PrivateRoute>
         ),
       },
