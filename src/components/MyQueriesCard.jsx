@@ -57,11 +57,11 @@ const MyQueriesCard = () => {
                         <div className="card bg-base-100 shadow-xl">
                             <figure><img src={p.image} alt="Shoes" /></figure>
                             <div className="">
-                                <h2 className="card-title">Name: {p.Product_Name}</h2>
+                                <h2 className="card-title">pet Name: {p.Product_Name}</h2>
                                 <div className="text-white mb-1">
-                                    <p>Product_Brand: {p.Product_Brand}</p>
-                                    <p>Boycotting_Reason_Details: {p.Boycotting_Reason_Details}</p>
-                                    <p>Query_Title: {p.Query_Title}</p>
+                                    <p>Pet location: {p.Product_Brand}</p>
+                                    <p>pet age: {p.Boycotting_Reason_Details}</p>
+                                    <p>pet location: {p.Query_Title}</p>
                                     <div className="flex">
                                         <p className="mt-3"> User name: {p.displayName}</p>
                                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">

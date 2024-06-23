@@ -42,7 +42,7 @@ const AllPets = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axiosSecure.delete(`/adopt/${pets._id}`)
+                axiosSecure.delete(`/pets/${pets._id}`)
                     .then(res => {
                         if (res.data.deletedCount > 0) {
                             refetch();
@@ -60,7 +60,7 @@ const AllPets = () => {
     return (
         <div>
             <div className="flex justify-evenly my-4">
-                <h2 className="text-3xl">All Users</h2>
+                <h2 className="text-3xl">All pets</h2>
                 <h2 className="text-3xl">Total Users: {pets.length}</h2>
             </div>
             <div className="overflow-x-auto">
@@ -70,7 +70,6 @@ const AllPets = () => {
                         <tr>
                             <th>#</th>
                             <th>Name</th>
-                            <th>Email</th>
                             <th>Roll</th>
                             <th>Action</th>
                             <th>update</th>
@@ -80,8 +79,7 @@ const AllPets = () => {
                         {
                             pets.map((pets, index) => <tr key={pets._id}>
                                 <th>{index + 1}</th>
-                                <td>{pets.Product_Name}</td>
-                                <td>{pets.email}</td>
+                                <td>{pets.pet_name}</td>
                                 <td>
                                     {pets.role === 'pending' ? 'yes' :
                                         <button onClick={() => handleMakeAdmin(pets)} className="btn btn-lg bg- bg-orange-500"><FaUsers className="text-white text-2xl"></FaUsers></button>
@@ -92,7 +90,7 @@ const AllPets = () => {
                                 </td>
                                 <td>
                                     <td>
-                                        <Link to={`/products/${pets._id}`}><button className="btn btn-primary">Update</button></Link>
+                                        <Link to={`/pets/${pets._id}`}><button className="btn btn-primary">Update</button></Link>
                                     </td>
                                 </td>
                             </tr>)

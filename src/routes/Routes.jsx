@@ -20,6 +20,7 @@ import UpdateQueries from '../pages/UpdateQueries'
 import Adopt from '../pages/Adopt'
 import AdoptRequest from '../pages/AdoptRequest'
 import AllPets from '../pages/AllPets'
+import UpdatePets from '../pages/UpdatePets'
 
 const router = createBrowserRouter([
   {
@@ -86,6 +87,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <UpdateQueries></UpdateQueries>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/pets/:id",
+        element: (
+          <PrivateRoute>
+            <UpdatePets></UpdatePets>
           </PrivateRoute>
         ),
       },

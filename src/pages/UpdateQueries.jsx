@@ -63,7 +63,7 @@ const UpdateQueries = () => {
                             <span className="text-[#8049ff]">
                                 Update-
                             </span>
-                            Your Product
+                            Your Pet
                         </span>
                     </p>
                 </div>
@@ -72,24 +72,24 @@ const UpdateQueries = () => {
                     <div className="flex gap-8 ">
                         <div className="flex-1">
                             <label className="block mb-2 dark:text-white" htmlFor="Product Name">
-                                Product Name
+                                Pet Name
                             </label>
                             <input
                                 className="w-full p-2 border rounded-md focus:text-[#8049ff]"
                                 type="text"
-                                placeholder="Product Name"
+                                placeholder="Pet Name"
                                 id="Product_Name"
                                 name="Product_Name"
                                 defaultValue={product.Product_Name}
                             />
 
                             <label className="block mb-2 dark:text-white" htmlFor="Product Name">
-                                Product Brand
+                                Pet age
                             </label>
                             <input
                                 className="w-full p-2 border rounded-md focus:text-[#8049ff]"
                                 type="text"
-                                placeholder="Product Brand"
+                                placeholder="Pet age"
                                 id="Product_Brand"
                                 name="Product_Brand"
                                 defaultValue={product.Product_Brand}
@@ -99,12 +99,12 @@ const UpdateQueries = () => {
                                 className="block mt-4 mb-2 dark:text-white"
                                 htmlFor="price"
                             >
-                                Query Title
+                                pet location
                             </label>
                             <input
                                 className="w-full p-2 border rounded-md focus:text-[#8049ff]"
                                 type="text"
-                                placeholder="Query_Title"
+                                placeholder="pet location"
                                 id="Query_Title"
                                 name="Query_Title"
                                 defaultValue={product.Query_Title}
@@ -128,14 +128,14 @@ const UpdateQueries = () => {
                                 className="block mt-4 mb-2 dark:text-white"
                                 htmlFor="Boycotting_Reason_Details"
                             >
-                                Boycotting Reason Details
+                                pet type
                             </label>
                             <input
                                 name="Boycotting_Reason_Details"
                                 id="Boycotting_Reason_Details"
                                 className="w-full p-2 border rounded-md focus:text-[#8049ff]"
                                 type="text"
-                                placeholder="Boycotting_Reason_Details"
+                                placeholder="pet type"
                                 defaultValue={product.Boycotting_Reason_Details}
                             >
                             </input>

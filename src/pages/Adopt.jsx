@@ -45,7 +45,7 @@ const Adopt = () => {
                             <span className="text-[#8049ff]">
                                 Add-
                             </span>
-                            Your Product
+                            Your pet
                         </span>
                     </p>
                 </div>
@@ -54,23 +54,23 @@ const Adopt = () => {
                     <div className="flex gap-8 ">
                         <div className="flex-1">
                             <label className="block mb-2 dark:text-white" htmlFor="Product Name">
-                                Product Name
+                                Pet name
                             </label>
                             <input
                                 className="w-full p-2 border rounded-md focus:text-[#8049ff]"
                                 type="text"
-                                placeholder="Product Name"
+                                placeholder="Pet name"
                                 id="Product_Name"
                                 name="Product_Name"
                             />
 
                             <label className="block mb-2 dark:text-white" htmlFor="Product Name">
-                                Product Brand
+                                Pet age
                             </label>
                             <input
                                 className="w-full p-2 border rounded-md focus:text-[#8049ff]"
                                 type="text"
-                                placeholder="Product Brand"
+                                placeholder="Pet age"
                                 id="Product_Brand"
                                 name="Product_Brand"
                             />
@@ -79,12 +79,12 @@ const Adopt = () => {
                                 className="block mt-4 mb-2 dark:text-white"
                                 htmlFor="Query_Title"
                             >
-                                Query Title
+                                pet location
                             </label>
                             <input
                                 className="w-full p-2 border rounded-md focus:text-[#8049ff]"
                                 type="text"
-                                placeholder="Query_Title"
+                                placeholder="pet location"
                                 id="Query_Title"
                                 name="Query_Title"
                             />
@@ -106,14 +106,14 @@ const Adopt = () => {
                                 className="block mt-4 mb-2 dark:text-white"
                                 htmlFor="Boycotting_Reason_Details"
                             >
-                                Boycotting Reason Details
+                                pet type
                             </label>
                             <input
                                 name="Boycotting_Reason_Details"
                                 id="Boycotting_Reason_Details"
                                 className="w-full p-2 border rounded-md focus:text-[#8049ff]"
                                 type="text"
-                                placeholder="Boycotting_Reason_Details"
+                                placeholder="pet type"
                             >
                             </input>
                         </div>

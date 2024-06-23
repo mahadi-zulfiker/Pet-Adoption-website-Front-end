@@ -7,38 +7,38 @@ const UpdatePets = () => {
 
     const { id } = useParams();
     console.log(id);
-    const [product, setProduct] = useState({});
+    const [pet, setPet] = useState({});
 
     useEffect(() => {
-        fetch(`${import.meta.env.VITE_API_URL}/pets/${id}`)
+        fetch(`${import.meta.env.VITE_API_URL}/singlePet/${id}`)
             .then(res => res.json())
             .then(data => {
-                setProduct(data);
+                setPet(data);
                 console.log(data);
             })
     }, [id])
 
     const { user } = useAuth() || {};
-    const handleUpdateProduct = (e) => {
+    const handleUpdatePet = (e) => {
         e.preventDefault();
 
-        const Product_Name = e.target.Product_Name.value;
-        const image = e.target.image.value;
-        const Product_Brand = e.target.Product_Brand.value;
-        const Boycotting_Reason_Details = e.target.Boycotting_Reason_Details.value;
-        const Query_Title = e.target.Query_Title.value;
+        const pet_name = e.target.pet_name.value;
+        const pet_image = e.target.pet_image.value;
+        const pet_age = e.target.pet_age.value;
+        const pet_location = e.target.pet_location.value;
+        const pet_type = e.target.pet_type.value;
         const email = user.email;
         const displayName = user.displayName;
         const photoURL = user.photoURL;
 
         // console.log(name, price, image, type)
 
-        const info = { displayName, Product_Name, image, Product_Brand, email, Boycotting_Reason_Details, Query_Title, photoURL };
+        const info2 = { displayName, pet_name, pet_image, pet_age, email, pet_location, pet_type, photoURL };
 
         fetch(`${import.meta.env.VITE_API_URL}/updatePets/${id}`, {
             method: "PUT",
             headers: { "Content-type": "application/json" },
-            body: JSON.stringify(info)
+            body: JSON.stringify(info2)
         })
             .then(res => res.json())
             .then(data => {
@@ -62,24 +62,24 @@ const UpdatePets = () => {
                             <span className="text-[#8049ff]">
                                 Update-
                             </span>
-                            Your Product
+                            Your Pet
                         </span>
                     </p>
                 </div>
                 {/* form */}
-                <form onSubmit={handleUpdateProduct}>
+                <form onSubmit={handleUpdatePet}>
                     <div className="flex gap-8 ">
                         <div className="flex-1">
-                            <label className="block mb-2 dark:text-white" htmlFor="Product Name">
-                                Product Name
+                            <label className="block mb-2 dark:text-white" htmlFor="Pet Name">
+                                Pet Name
                             </label>
                             <input
                                 className="w-full p-2 border rounded-md focus:text-[#8049ff]"
                                 type="text"
-                                placeholder="Product Name"
-                                id="Product_Name"
-                                name="Product_Name"
-                                defaultValue={product.Product_Name}
+                                placeholder="pet Name"
+                                id="pet_name"
+                                name="pet_name"
+                                defaultValue={pet.pet_name}
                             />
 
                             <label className="block mb-2 dark:text-white" htmlFor="Product Name">
@@ -90,23 +90,23 @@ const UpdatePets = () => {
                                 type="text"
                                 placeholder="Product Brand"
                                 id="Product_Brand"
-                                name="Product_Brand"
-                                defaultValue={product.Product_Brand}
+                                name="pet_age"
+                                defaultValue={pet.pet_age}
                             />
 
                             <label
                                 className="block mt-4 mb-2 dark:text-white"
                                 htmlFor="price"
                             >
-                                Query Title
+                                pet_type
                             </label>
                             <input
                                 className="w-full p-2 border rounded-md focus:text-[#8049ff]"
                                 type="text"
                                 placeholder="Query_Title"
                                 id="Query_Title"
-                                name="Query_Title"
-                                defaultValue={product.Query_Title}
+                                name="pet_type"
+                                defaultValue={pet.pet_type}
                             />
 
                         </div>
@@ -120,22 +120,22 @@ const UpdatePets = () => {
                                 type="text"
                                 placeholder="Enter Image URL"
                                 id="image"
-                                name="image"
-                                defaultValue={product.image}
+                                name="pet_image"
+                                defaultValue={pet.pet_image}
                             />
                             <label
                                 className="block mt-4 mb-2 dark:text-white"
                                 htmlFor="Boycotting_Reason_Details"
                             >
-                                Boycotting Reason Details
+                                pet location
                             </label>
                             <input
                                 name="Boycotting_Reason_Details"
                                 id="Boycotting_Reason_Details"
                                 className="w-full p-2 border rounded-md focus:text-[#8049ff]"
                                 type="text"
-                                placeholder="Boycotting_Reason_Details"
-                                defaultValue={product.Boycotting_Reason_Details}
+                                placeholder="pet_location"
+                                defaultValue={pet.pet_location}
                             >
                             </input>
                         </div>
@@ -146,7 +146,7 @@ const UpdatePets = () => {
                     <input
                         className="px-4 w-full py-2 mt-4 rounded hover:bg-[#4331ab]  bg-[#8049ff] duration-200 text-white cursor-pointer font-semibold"
                         type="submit"
-                        value="Update Product"
+                        value="Update Pet"
                     />
                 </form>
             </div>
