@@ -20,6 +20,9 @@ const Dashboard = () => {
                             <li>
                                 <NavLink to="/dashboard/allUsers"><FaUsers></FaUsers>All Users</NavLink>
                             </li>
+                            <li>
+                                <NavLink to="/dashboard/allPets"><FaUsers></FaUsers>All Pets</NavLink>
+                            </li>
                         </> :
                             <>
                                 <li>

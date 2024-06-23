@@ -2,19 +2,20 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../hooks/useAxiosSecure";
 import { FaTrashAlt, FaUsers } from "react-icons/fa";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
-const AdoptRequest = () => {
+const AllPets = () => {
     const axiosSecure = useAxiosSecure();
-    const { data: adopt = [], refetch } = useQuery({
-        queryKey: ['adopt'],
+    const { data: pets = [], refetch } = useQuery({
+        queryKey: ['pets'],
         queryFn: async () => {
-            const res = await axiosSecure.get('/adopt');
+            const res = await axiosSecure.get('/pets');
             return res.data;
         }
     });
 
-    const handleMakeAdmin = adopt => {
-        axiosSecure.patch(`/adopt/${adopt._id}`)
+    const handleMakeAdmin = pets => {
+        axiosSecure.patch(`/pets/${pets._id}`)
             .then(res => {
                 console.log(res.data);
                 if (res.data.modifiedCount > 0) {
@@ -22,7 +23,7 @@ const AdoptRequest = () => {
                     Swal.fire({
                         position: "top-end",
                         icon: "success",
-                        title: `${adopt.Product_Name} is approved Now!`,
+                        title: `${pets.Product_Name} is approved Now!`,
                         showConfirmButton: false,
                         timer: 1500
                     });
@@ -30,7 +31,7 @@ const AdoptRequest = () => {
             })
     }
 
-    const handleDeleteUser = adopt => {
+    const handleDeleteUser = pets => {
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -41,7 +42,7 @@ const AdoptRequest = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axiosSecure.delete(`/adopt/${adopt._id}`)
+                axiosSecure.delete(`/adopt/${pets._id}`)
                     .then(res => {
                         if (res.data.deletedCount > 0) {
                             refetch();
@@ -60,7 +61,7 @@ const AdoptRequest = () => {
         <div>
             <div className="flex justify-evenly my-4">
                 <h2 className="text-3xl">All Users</h2>
-                <h2 className="text-3xl">Total Users: {adopt.length}</h2>
+                <h2 className="text-3xl">Total Users: {pets.length}</h2>
             </div>
             <div className="overflow-x-auto">
                 <table className="table table-zebra w-full">
@@ -72,21 +73,27 @@ const AdoptRequest = () => {
                             <th>Email</th>
                             <th>Roll</th>
                             <th>Action</th>
+                            <th>update</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            adopt.map((adopt, index) => <tr key={adopt._id}>
+                            pets.map((pets, index) => <tr key={pets._id}>
                                 <th>{index + 1}</th>
-                                <td>{adopt.Product_Name}</td>
-                                <td>{adopt.email}</td>
+                                <td>{pets.Product_Name}</td>
+                                <td>{pets.email}</td>
                                 <td>
-                                    {adopt.role === 'pending' ? 'yes' :
-                                        <button onClick={() => handleMakeAdmin(adopt)} className="btn btn-lg bg- bg-orange-500"><FaUsers className="text-white text-2xl"></FaUsers></button>
+                                    {pets.role === 'pending' ? 'yes' :
+                                        <button onClick={() => handleMakeAdmin(pets)} className="btn btn-lg bg- bg-orange-500"><FaUsers className="text-white text-2xl"></FaUsers></button>
                                     }
                                 </td>
                                 <td>
-                                    <button onClick={() => handleDeleteUser(adopt)} className="btn btn-ghost btn-lg"><FaTrashAlt className="text-red-600"></FaTrashAlt></button>
+                                    <button onClick={() => handleDeleteUser(pets)} className="btn btn-ghost btn-lg"><FaTrashAlt className="text-red-600"></FaTrashAlt></button>
+                                </td>
+                                <td>
+                                    <td>
+                                        <Link to={`/products/${pets._id}`}><button className="btn btn-primary">Update</button></Link>
+                                    </td>
                                 </td>
                             </tr>)
                         }
@@ -97,4 +104,4 @@ const AdoptRequest = () => {
     );
 };
 
-export default AdoptRequest;
+export default AllPets;

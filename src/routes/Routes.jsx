@@ -19,6 +19,7 @@ import MyQueries from '../pages/MyQueries'
 import UpdateQueries from '../pages/UpdateQueries'
 import Adopt from '../pages/Adopt'
 import AdoptRequest from '../pages/AdoptRequest'
+import AllPets from '../pages/AllPets'
 
 const router = createBrowserRouter([
   {
@@ -116,6 +117,12 @@ const router = createBrowserRouter([
         path: 'allUsers',
         element: <AdminRoute>
           <AllUsers></AllUsers>
+        </AdminRoute>
+      },
+      {
+        path: 'allPets',
+        element: <AdminRoute>
+          <AllPets></AllPets>
         </AdminRoute>
       },
     ]
