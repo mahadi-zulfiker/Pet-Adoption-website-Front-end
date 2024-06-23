@@ -106,6 +106,16 @@ const router = createBrowserRouter([
         path: 'adoptRequest',
         element: <AdoptRequest></AdoptRequest>
       },
+      {
+        path: 'myQueries',
+        element:
+          <MyQueries></MyQueries>
+      },
+      {
+        path: 'addQueries',
+        element:
+          <AddQueries></AddQueries>
+      },
       // admin routes
       {
         path: 'adminHome',
