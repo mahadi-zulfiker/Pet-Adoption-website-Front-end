@@ -25,6 +25,9 @@ const Dashboard = () => {
                                 <li>
                                     <NavLink to="/dashboard/userHome"><FaHome></FaHome>User Home</NavLink>
                                 </li>
+                                <li>
+                                    <NavLink to="/dashboard/adoptRequest"><FaHome></FaHome>Adopt Request</NavLink>
+                                </li>
                             </>
                     }
                     {/* shared nav links */}
@@ -34,6 +37,16 @@ const Dashboard = () => {
                     </li>
                     <li>
                         <NavLink to="/petListing"><FaSearch></FaSearch>Pets</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/addQueries'>
+                            Add Pets
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/myQueries'>
+                            my pets
+                        </NavLink>
                     </li>
                 </ul>
             </div>

@@ -45,22 +45,6 @@ const Navbar = () => {
                 </Link>
               </li>
             </ul>
-            {user && (
-              <ul
-                className='menu menu-horizontal mt-3 p-2'
-              >
-                <li>
-                  <Link to='/addQueries' className=''>
-                    Add Pets
-                  </Link>
-                </li>
-                <li>
-                  <Link to='/myQueries' className=''>
-                    my pets
-                  </Link>
-                </li>
-              </ul>
-            )}
 
             {/* Dropdown Menu */}
             <div className='relative'>

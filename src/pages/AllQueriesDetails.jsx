@@ -28,7 +28,7 @@ const AllQueriesDetails = () => {
                             <p>pet_type: {item.pet_type}</p>
                         </div>
                         <div className="card-actions justify-between">
-                            <Link to={`/petDetails/${item._id}`}><button className="btn btn-primary">Adopt</button></Link>
+                            <Link to={`/adopt/${item._id}`}><button className="btn btn-primary">Adopt</button></Link>
                         </div>
                     </div>
                 </div>

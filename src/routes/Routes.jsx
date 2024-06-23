@@ -17,6 +17,8 @@ import AdminHome from '../pages/AdminHome/AdminHome'
 import AddQueries from '../pages/AddQueries'
 import MyQueries from '../pages/MyQueries'
 import UpdateQueries from '../pages/UpdateQueries'
+import Adopt from '../pages/Adopt'
+import AdoptRequest from '../pages/AdoptRequest'
 
 const router = createBrowserRouter([
   {
@@ -73,6 +75,12 @@ const router = createBrowserRouter([
         </PrivateRoute>,
       },
       {
+        path: '/adopt/:id',
+        element: <PrivateRoute>
+          <Adopt></Adopt>
+        </PrivateRoute>,
+      },
+      {
         path: "/products/:id",
         element: (
           <PrivateRoute>
@@ -92,6 +100,10 @@ const router = createBrowserRouter([
       {
         path: 'userHome',
         element: <UserHome></UserHome>
+      },
+      {
+        path: 'adoptRequest',
+        element: <AdoptRequest></AdoptRequest>
       },
       // admin routes
       {
