@@ -21,6 +21,10 @@ import Adopt from '../pages/Adopt'
 import AdoptRequest from '../pages/AdoptRequest'
 import AllPets from '../pages/AllPets'
 import UpdatePets from '../pages/UpdatePets'
+import UpdateDonations from '../pages/UpdateDonations'
+import AllDonationsAdmin from '../pages/AllDonationsAdmin'
+import AddDonations from '../pages/AddDonations'
+import MyDonations from '../pages/MyDonations'
 
 const router = createBrowserRouter([
   {
@@ -98,6 +102,14 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+      {
+        path: "/donations/:id",
+        element: (
+          <PrivateRoute>
+            <UpdateDonations></UpdateDonations>
+          </PrivateRoute>
+        ),
+      },
     ],
   },
   {
@@ -121,9 +133,19 @@ const router = createBrowserRouter([
           <MyQueries></MyQueries>
       },
       {
+        path: 'myDonations',
+        element:
+          <MyDonations></MyDonations>
+      },
+      {
         path: 'addQueries',
         element:
           <AddQueries></AddQueries>
+      },
+      {
+        path: 'addDonations',
+        element:
+          <AddDonations></AddDonations>
       },
       // admin routes
       {
@@ -142,6 +164,12 @@ const router = createBrowserRouter([
         path: 'allPets',
         element: <AdminRoute>
           <AllPets></AllPets>
+        </AdminRoute>
+      },
+      {
+        path: 'allDonations',
+        element: <AdminRoute>
+          <AllDonationsAdmin></AllDonationsAdmin>
         </AdminRoute>
       },
     ]

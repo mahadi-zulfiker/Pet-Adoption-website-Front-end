@@ -24,6 +24,9 @@ const Dashboard = () => {
                                 <NavLink to="/dashboard/allPets"><FaUsers></FaUsers>All Pets</NavLink>
                             </li>
                             <li>
+                                <NavLink to="/dashboard/allDonations"><FaUsers></FaUsers>All Donations</NavLink>
+                            </li>
+                            <li>
                                 <NavLink to='/dashboard/myQueries'>
                                     my pets
                                 </NavLink>
@@ -42,8 +45,18 @@ const Dashboard = () => {
                                     </NavLink>
                                 </li>
                                 <li>
+                                    <NavLink to='/dashboard/addDonations'>
+                                        Add Donations
+                                    </NavLink>
+                                </li>
+                                <li>
                                     <NavLink to='/dashboard/myQueries'>
                                         my pets
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to='/dashboard/myDonations'>
+                                        my Donations
                                     </NavLink>
                                 </li>
                             </>
